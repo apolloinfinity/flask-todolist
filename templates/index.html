@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block todo %}
+<div class="row pb-3 rounded-bottom">
+    <div class="col-md-6 offset-md-3">
+        <form action="/add" method="POST">
+            <div class="input-group mb-3">
+                <input type="text" name="todoitem" class="form-control" placeholder="What needs to be done?" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <input class="btn btn-success" type="submit">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6 offset-md-3">
+        <ul class="list-group">
+            {% for item in mylist %}
+            <li class="list-group-item">{{item}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}
