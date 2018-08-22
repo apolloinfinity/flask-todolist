@@ -1,8 +1,3 @@
-__pycache__
-.vscode
-env
-config.py
-app.db
 *.py[cod]
 
 # C extensions
@@ -41,4 +36,5 @@ nosetests.xml
 .pydevproject
 
 venv
+app.db
 microblog.log*
