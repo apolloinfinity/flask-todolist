@@ -4,8 +4,8 @@ from app.models import db, MyList
 
 @app.route('/')
 def index():
-    mylist = MyList.query.all()
-    return render_template('index.html', mylist=mylist)
+    todos = MyList.query.all()
+    return render_template('index.html', todos=todos)
 
 @app.route('/add', methods=['POST'])
 def add():
@@ -14,3 +14,8 @@ def add():
     db.session.add(todo) # session adds the todo variable
     db.session.commit()
     return redirect(url_for('index'))
+
+# @app.route('/delete', methods=['POST'])
+# def delete():
+#     todo = MyList(item=request.form['todoitem'])
+#     item
